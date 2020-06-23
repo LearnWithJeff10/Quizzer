@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Quizzer.Models
 {
@@ -8,6 +9,7 @@ namespace Quizzer.Models
 
         public List<string> Choices { get; set; } = new List<string>();
 
+        [Display(Name = "Answer")]
         public string StudentAnswer { get; set; }
 
         public string CorrectAnswer { get; set; }
