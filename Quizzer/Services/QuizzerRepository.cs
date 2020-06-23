@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Quizzer.Services
 {
-    public class QuizzerRepository
+    public class QuizzerRepository : IQuizzerRepository
     {
-        public List<Question> Questions{ get; set; }
+        public List<Question> Questions { get; set; }
 
 
         public QuizzerRepository()
