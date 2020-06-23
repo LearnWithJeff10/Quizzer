@@ -16,9 +16,16 @@ namespace Quizzer.Controllers
             _quizzerRepository = quizzerRepository;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View(_quizzerRepository.Questions);
+        }
+
+        [HttpPost]
+        public IActionResult Index(Quizzer.Models.Question[] answers)
+        {
+            return Content($"The answers were: {string.Join(",",answers.Select(a=>a.StudentAnswer))}");
         }
     }
 }

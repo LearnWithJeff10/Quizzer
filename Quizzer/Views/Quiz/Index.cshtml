@@ -7,7 +7,7 @@
 <h2>@ViewData["Title"]</h2>
 
 <div>
-    <form asp-action="Index">
+    <form asp-action="Index" method="post">
         <div class="questions col-lg-12">
             @for (int i = 0; i < Model.Count; i++)
             {
@@ -16,12 +16,12 @@
                 </h4>
                 <div>
                     <ol style="list-style-type:upper-alpha">
-                    @for (int j = 0; j < Model[i].Choices.Count; j++)
-                    {
-                        <li>
-                            @Html.DisplayFor(model => model[i].Choices[j])
-                        </li>
-                    }
+                        @for (int j = 0; j < Model[i].Choices.Count; j++)
+                        {
+                            <li>
+                                @Html.DisplayFor(model => model[i].Choices[j])
+                            </li>
+                        }
                     </ol>
                     @Html.DisplayNameFor(model => model[i].StudentAnswer)
                     @Html.EditorFor(model => model[i].StudentAnswer)
