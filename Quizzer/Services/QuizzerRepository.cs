@@ -1,5 +1,6 @@
 ﻿using Quizzer.Models;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Quizzer.Services
 {
@@ -10,7 +11,7 @@ namespace Quizzer.Services
 
         public QuizzerRepository()
         {
-            Questions = LoadQuiz();
+            Questions = LoadQuizFromFile("samplequiz.txt");
         }
 
         public List<Question> LoadQuiz()
@@ -54,5 +55,37 @@ namespace Quizzer.Services
 
             return quiz;
         }
+
+        public List<Question> LoadQuizFromFile(string filename)
+        {
+            var path = filename;
+            var lines = File.ReadAllLines(path);
+
+            var quiz = new List<Question>();
+
+            var questionLine = 0;
+            var question = new Question();
+            foreach (var line in lines)
+            {
+                if (string.IsNullOrWhiteSpace(line))
+                {
+                    if (!string.IsNullOrWhiteSpace(question.QuestionText))
+                    {
+                        quiz.Add(question);
+                    }
+                    question = new Question();
+                    questionLine = 0;
+                    continue;
+                }
+
+                if (questionLine++ == 0)
+                    question.QuestionText = line;
+                else
+                    question.Choices.Add(line);
+            }
+
+            return quiz;
+        }
+
     }
 }

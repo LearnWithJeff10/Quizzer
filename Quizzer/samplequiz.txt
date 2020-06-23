@@ -1,0 +1,29 @@
+﻿What does CSS stand for?
+Computer Style Sheets
+Creative Style Sheets
+Cascading Style Sheets      
+Colorful Style Sheets
+Crazy Style Sheets
+
+Which property is used to change the font of an element?
+font-weight
+font-family      
+font-style
+
+Which HTML attribute is used to define inline styles?
+style      
+styles
+font
+class
+
+Which is the correct CSS syntax?
+{body:color=black;}
+body:color=black;
+{body;color:black;}
+body {color: black;}      
+
+How do you display hyperlinks without an underline?
+a {decoration:no-underline;}
+a {text-decoration:no-underline;}
+a {text-decoration:none;}      
+a {underline:none;}
