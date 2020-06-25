@@ -11,9 +11,10 @@
         <div class="questions col-lg-12">
             @for (int i = 0; i < Model.Count; i++)
             {
-                <h4>
-                    @Html.DisplayFor(model => model[i].QuestionText)
-                </h4>
+            <h4>
+                @Html.DisplayNameFor(model => model[i].QuestionText) #@(i+1) <br />
+                @Html.DisplayFor(model => model[i].QuestionText)
+            </h4>
                 <div>
                     <ol style="list-style-type:upper-alpha">
                         @for (int j = 0; j < Model[i].Choices.Count; j++)

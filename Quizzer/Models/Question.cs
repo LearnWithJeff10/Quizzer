@@ -5,6 +5,7 @@ namespace Quizzer.Models
 {
     public class Question
     {
+        [Display(Name = "Question")]
         public string QuestionText { get; set; }
 
         public List<string> Choices { get; set; } = new List<string>();
